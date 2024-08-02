@@ -1,31 +1,23 @@
-Introdução
-Este projeto implementa uma API simples para buscar produtos e autenticação de usuários usando Laravel com autenticação JWT.
+## Explicação da Estrutura do Projeto
 
-Funcionalidades Principais
-Autenticação JWT: Implementação de registro, login, refresh token, logout e obtenção de dados do usuário autenticado.
-Produtos: Listagem básica de produtos, incluindo listagem de todos os produtos e detalhes de um produto específico.
-Tecnologias Utilizadas
-Laravel: Framework PHP utilizado para desenvolvimento do backend da API.
-JWT (JSON Web Tokens): Utilizado para autenticação stateless na API.
-PHPUnit: Utilizado para testes automatizados.
-Como Usar
-Configuração do Ambiente
+O projeto segue uma arquitetura bem definida, utilizando as seguintes camadas:
 
-Clone este repositório.
-Instale as dependências usando composer install.
-Configure o arquivo .env com suas credenciais de banco de dados e outras configurações necessárias.
-Migrações e Seeders
+- **Controllers:** Responsáveis por lidar com as requisições HTTP e devolver as respostas apropriadas. Eles atuam como intermediários entre a camada de serviços e a interface com o usuário.
 
-Execute as migrações para criar as tabelas no banco de dados: php artisan migrate.
-Opcional: Se necessário, execute seeders para popular o banco de dados com dados iniciais.
-Execução dos Testes
+- **Services:** Contêm a lógica de negócio principal do aplicativo. Os serviços são responsáveis por processar dados e implementar regras específicas antes de passá-los para a camada de repositórios ou devolver a resposta ao controlador.
 
-Execute os testes para garantir que tudo está funcionando corretamente: php artisan test.
-Endpoints Disponíveis
+- **Repositories:** Abstraem o acesso aos dados, seja de um banco de dados ou de uma API externa. Esta camada é responsável por interagir com os modelos e garantir que os dados sejam recuperados ou armazenados de forma eficiente.
 
-Consulte a documentação da API (Swagger) para obter detalhes sobre os endpoints disponíveis e como interagir com eles.
-Documentação da API
-A documentação da API está disponível através do Swagger, acessível em /api/documentation após iniciar o servidor local.
+- **Models:** Representam a estrutura dos dados da aplicação. Eles são responsáveis por mapear a estrutura dos dados e as relações entre eles, tanto para persistência em banco de dados quanto para interação com outras partes do sistema.
 
-Conclusão
-Este projeto demonstra habilidades em desenvolvimento de APIs RESTful utilizando Laravel, integração de autenticação JWT, e testes automatizados com PHPUnit. Sinta-se à vontade para explorar o código-fonte.
+### Integração com APIs
+
+Para a integração com APIs externas, foi utilizado o **Design Pattern Adapter**. Embora este padrão seja mais comumente aplicado em integrações mais complexas, sua utilização neste projeto serve para:
+
+- **Isolar a lógica de integração:** Facilitar a adaptação e manutenção da integração com APIs externas, minimizando o impacto de alterações na API externa sobre o restante do sistema.
+
+- **Facilitar a manutenção:** Em caso de mudanças na API externa, as alterações são centralizadas na camada de adaptação, evitando modificações extensivas na lógica de negócio e nos controles.
+
+- **Melhorar a flexibilidade:** Permitir que diferentes APIs sejam adaptadas e integradas de forma uniforme, oferecendo uma interface consistente para o restante do sistema.
+
+Essa abordagem garante uma arquitetura modular e flexível, preparando o sistema para escalar e se adaptar a futuras necessidades de integração com APIs externas mais complexas.
