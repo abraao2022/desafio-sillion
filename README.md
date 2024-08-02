@@ -93,3 +93,15 @@ Para a integração com APIs externas, foi utilizado o **Design Pattern Adapter*
 - **Melhorar a flexibilidade:** Permitir que diferentes APIs sejam adaptadas e integradas de forma uniforme, oferecendo uma interface consistente para o restante do sistema.
 
 Essa abordagem garante uma arquitetura modular e flexível, preparando o sistema para escalar e se adaptar a futuras necessidades de integração com APIs externas mais complexas.
+
+
+## Desktop
+![image](https://github.com/user-attachments/assets/462db735-3c61-425c-acea-a2ddb8c675e2)
+
+## Mobile
+![image](https://github.com/user-attachments/assets/29cd2562-5dbb-44c6-9619-baf1a58cce4f)
+
+## Expandir para exibir informações do usuário
+![image](https://github.com/user-attachments/assets/442339a2-5c61-40d2-8eae-fae06f754e9f)
+
+
